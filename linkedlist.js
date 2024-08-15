@@ -168,7 +168,6 @@ function LinkedList() {
   return {append, prepend, size, getHead, getTail, at, pop, contains, find, toString, insertAt, removeAt};
 }
 
-
 const list = LinkedList();
 
 list.append("dog");
