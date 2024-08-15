@@ -150,5 +150,32 @@ function LinkedList() {
     prev.next = createNode(value);
     prev.next.next = node;
   }
-  return {append, prepend, size, getHead, getTail, at, pop, contains, find, toString, insertAt};
+  function removeAt(index) {
+    let node = head;
+    let prev = node;
+    if (index === 0) {
+      head = head.next;
+    }
+    if (index > size()){
+      return "Index is too large";
+    }
+    for (i=0; i<index; i++){
+      prev = node;
+      node = node.next;
+    }
+    prev.next = node.next;
+  }
+  return {append, prepend, size, getHead, getTail, at, pop, contains, find, toString, insertAt, removeAt};
 }
+
+
+const list = LinkedList();
+
+list.append("dog");
+list.append("cat");
+list.append("parrot");
+list.append("hamster");
+list.append("snake");
+list.append("turtle");
+
+console.log(list.toString());
